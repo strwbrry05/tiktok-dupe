@@ -13,6 +13,10 @@ body {
 
 .videoPlayback {
     background-color: pink;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 video {
