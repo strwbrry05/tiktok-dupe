@@ -14,8 +14,6 @@ function nextVideo() {
     }
     videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
         autoplay 
-        webkit-playsinline 
-        playsinline 
         loop
     ></video>`
 }
@@ -25,7 +23,8 @@ function previousVideo() {
     if (videoNum === 0) {
         videoNum = 3;
     }
-    videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
+    videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4" 
+        controls
         autoplay 
         webkit-playsinline 
         playsinline 
