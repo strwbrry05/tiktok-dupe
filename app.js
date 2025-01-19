@@ -6,26 +6,28 @@ goForward.addEventListener('click', nextVideo);
 goBack.addEventListener('click', previousVideo);
 
 let videoNum = 1;
+const maxNum = 5;
 
 function nextVideo() {
     videoNum++;
-    if (videoNum === 4) {
+    if (videoNum === maxNum) {
         videoNum = 1;
     }
     videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
         autoplay 
         loop
+        playsinline
     ></video>`
 }
 
 function previousVideo() {
     videoNum--;
     if (videoNum === 0) {
-        videoNum = 3;
+        videoNum = maxNum-1;
     }
     videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4" 
+        controls
         autoplay 
-        webkit-playsinline 
         playsinline 
         loop
     ></video>`
