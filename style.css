@@ -5,7 +5,15 @@
 }
 
 body {
-    background-color: white;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.videoPlayback {
+    background-color: pink;
+    height: ;
 }
 
 video {
