@@ -9,16 +9,29 @@ goBack.addEventListener('click', previousVideo);
 let videoNum = 1;
 const maxNum = 11; // change to +1 of max videos
 
+let isChecked = false;
+console.log(isChecked);
+
 function nextVideo() {
     videoNum++;
     if (videoNum === maxNum) {
         videoNum = 1;
     }
-    videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
+
+    if (isChecked) {
+        videoPlayback.innerHTML = `<video width="320px" src="stsg/${videoNum}.mp4"  
         autoplay 
         loop
         playsinline
     ></video>`;
+    } else {
+        videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
+        autoplay 
+        loop
+        playsinline
+    ></video>`;
+    }
+    
     
 }
 
@@ -27,11 +40,20 @@ function previousVideo() {
     if (videoNum === 0) {
         videoNum = maxNum-1;
     }
-    videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4" 
-        autoplay  
+    
+    if (isChecked) {
+        videoPlayback.innerHTML = `<video width="320px" src="stsg/${videoNum}.mp4"  
+        autoplay 
         loop
         playsinline
     ></video>`;
+    } else {
+        videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4"  
+        autoplay 
+        loop
+        playsinline
+    ></video>`;
+    }
 
 }
 
@@ -42,9 +64,12 @@ stsgBtn.addEventListener('change', changeMode);
 
 function changeMode() {
     if (this.checked) {
+        isChecked = true;
+        console.log(isChecked);
         stsgLabel.textContent = 'enabled';
     } else {
+        isChecked = false;
+        console.log(isChecked);
         stsgLabel.textContent = 'disabled';
     }
-    console.log('activated');
 }
