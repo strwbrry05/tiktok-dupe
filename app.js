@@ -7,7 +7,7 @@ goForward.addEventListener('click', nextVideo);
 goBack.addEventListener('click', previousVideo);
 
 let videoNum = 1;
-const maxNum = 6;
+const maxNum = 11; // change to +1 of max videos
 
 function nextVideo() {
     videoNum++;
@@ -19,7 +19,6 @@ function nextVideo() {
         loop
         playsinline
     ></video>`;
-    tally.textContent = `${videoNum}/${maxNum - 1}`;
     
 }
 
@@ -33,6 +32,19 @@ function previousVideo() {
         loop
         playsinline
     ></video>`;
-    tally.textContent = `${videoNum}/${maxNum - 1}`;
 
+}
+
+const stsgBtn = document.querySelector('#stsgBtn');
+const stsgLabel = document.querySelector('#stsgLabel');
+
+stsgBtn.addEventListener('change', changeMode);
+
+function changeMode() {
+    if (this.checked) {
+        stsgLabel.textContent = 'enabled';
+    } else {
+        stsgLabel.textContent = 'disabled';
+    }
+    console.log('activated');
 }

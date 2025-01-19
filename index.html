@@ -7,17 +7,18 @@
     <title>gatit0's tiktok</title>
   </head>
   <body>
-    <div class="heading">
-      <h1>gatit0 tiktok</h1>
-      <p class="video-tally">1/4</p>
-    </div>
-
     <!-- <button>stsg mode</button> -->
     <div class="videoPlayback">
       <video width="320px" src="media/1.mp4" autoplay loop playsinline></video>
     </div>
     <button class="goBack">previous</button>
     <button class="goForward">next</button>
+
+    <div class="footer">
+      <p class="otherMode">satosugu mode</p>
+      <input type="checkbox" id="stsgBtn" name="stsgBtn" />
+      <label id="stsgLabel" for="stsgBtn">disabled</label>
+    </div>
 
     <script src="app.js"></script>
   </body>
