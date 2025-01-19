@@ -24,7 +24,6 @@ function previousVideo() {
         videoNum = 3;
     }
     videoPlayback.innerHTML = `<video width="320px" src="media/${videoNum}.mp4" 
-        controls
         autoplay 
         webkit-playsinline 
         playsinline 
